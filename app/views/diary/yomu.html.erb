@@ -1,0 +1,18 @@
+<div class="contents">
+	<section class="yomu">
+		<h4> Date</h4>
+		<%= @diary.created_at.strftime("%Y-%m-%d") %>
+	</section>
+	<section class="yomu">
+		<h4> Title</h4>
+		<%= @diary.title %>
+	</section>
+	<section class="yomu">
+		<h4> Boby</h4>
+		<%= @diary.body %>
+	</section>
+</div>
+<div class="contents">
+	<%= link_to "mokuji", "/diary" %>
+	<%= link_to "naosu", "/diary/#{@diary.id}/naosu" %>
+</div>

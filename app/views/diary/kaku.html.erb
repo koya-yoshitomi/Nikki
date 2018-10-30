@@ -1,0 +1,14 @@
+<div class="contents">
+	<%= form_for(@diary, :url => tsukuru_diary_path) do |f| %>
+	<!-- url指定しないとうまくいきませんでした -->
+		<div class="form-content">
+			<label> Title</label><br>
+			<%= f.text_field :title, type:"title" %>
+		</div>
+		<div class="form-content">
+			<label> Boby</label><br>
+			<%= f.text_area :body, type:"body" %>
+		</div>
+		<%= f.submit "送信" %>
+	<% end %>
+</div>

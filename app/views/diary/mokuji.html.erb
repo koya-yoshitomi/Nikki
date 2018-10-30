@@ -1,0 +1,23 @@
+<div class="contents">
+	<h3 class="mokuji-midashi"> My Diary</h3>
+	<%= link_to "/diary/kaku" do %>
+		<button class="new-diary">New Diary</button>
+	<% end %>
+
+	<table class="diary-table">
+		<thead>
+			<td style="width: 200px"> Title</td>
+			<td style="width: 150px"> Date</td>
+			<td> </td>
+			<td> </td>
+		</thead>
+		<% @diaries.each do |diary| %>
+			<tr>
+				<td> <%= link_to diary.title, yomu_diary_path(diary) %></td>
+				<td> <%= diary.created_at.strftime("%Y-%m-%d") %></td>
+				<td> <%= link_to "naosu", naosu_diary_path(diary) %></td>
+				<td> <%= link_to "kesu", kesu_diary_path(diary), method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
